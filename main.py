@@ -11,7 +11,7 @@ on the command line.
 
 dictFile = 'names.txt'
 hashFile = 'hashed.txt'
-if argv:
+if len(argv) > 1:
     dictFile = argv[1]
     hashFile = argv[2]
 
@@ -37,7 +37,7 @@ def attack(dictFile, hashFile):
             print("Not found")
     print(f"Time Taken {time.time()-st} secs")
 if __name__ == '__main__':
-    if argv[3] == 'p' or "P":
+    if len(argv)==3 and (argv[3] == 'p' or "P"):
         print("Prehashing for optimaization....")
         prehash(dictFile, hashFile)
         print("Process complete")
