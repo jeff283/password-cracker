@@ -37,9 +37,10 @@ def attack(dictFile, hashFile):
             print("Not found")
     print(f"Time Taken {time.time()-st} secs")
 if __name__ == '__main__':
-    if len(argv)==3 and (argv[3] == 'p' or "P"):
-        print("Prehashing for optimaization....")
-        prehash(dictFile, hashFile)
-        print("Process complete")
+    if len(argv)==4:
+            if argv[3] == 'p':
+                print("Prehashing for optimaization....")
+                prehash(dictFile, hashFile)
+                print("Process complete")
     else:
         attack(dictFile, hashFile)
